@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE suppressions PUBLIC
+    "-//Checkstyle//DTD SuppressionFilter Configuration 1.0//EN"
+    "https://checkstyle.org/dtds/suppressions_1_0.dtd">
+
+<suppressions>
+    <!-- Suppress AbbreviationAsWordInName for class names that are part of the API -->
+    <suppress checks="AbbreviationAsWordInName" files="IPCrypt.*\.java"/>
+    
+    <!-- Suppress for legitimate method names that match the specification -->
+    <suppress checks="AbbreviationAsWordInName" files="IPCryptNDX\.java" lines="21,72"/>
+    <suppress checks="AbbreviationAsWordInName" files="IPCryptND\.java" lines="461,498"/>
+    <suppress checks="AbbreviationAsWordInName" files="IPCryptTest\.java" lines="68,111"/>
+    <suppress checks="AbbreviationAsWordInName" files="IPCryptUtils\.java" lines="73"/>
+    
+    <!-- Suppress missing Javadoc for test and example main methods -->
+    <suppress checks="MissingJavadocMethod" files=".*Test\.java|.*Example\.java"/>
+    
+    <!-- Suppress indentation warnings for byte array initializations -->
+    <suppress checks="Indentation" files="IPCryptND\.java" lines="1-200"/>
+</suppressions>
