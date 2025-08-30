@@ -433,19 +433,18 @@ public class IPCryptND {
       int s2 = state[c * 4 + 2] & 0xFF;
       int s3 = state[c * 4 + 3] & 0xFF;
 
-      int result0 =
-          (mul0E((byte) s0) ^ mul0B((byte) s1) ^ mul0D((byte) s2) ^ mul09((byte) s3)) & 0xFF;
-      int result1 =
-          (mul09((byte) s0) ^ mul0E((byte) s1) ^ mul0B((byte) s2) ^ mul0D((byte) s3)) & 0xFF;
-      int result2 =
-          (mul0D((byte) s0) ^ mul09((byte) s1) ^ mul0E((byte) s2) ^ mul0B((byte) s3)) & 0xFF;
-      int result3 =
-          (mul0B((byte) s0) ^ mul0D((byte) s1) ^ mul09((byte) s2) ^ mul0E((byte) s3)) & 0xFF;
-
-      newState[c * 4] = (byte) result0;
-      newState[c * 4 + 1] = (byte) result1;
-      newState[c * 4 + 2] = (byte) result2;
-      newState[c * 4 + 3] = (byte) result3;
+      newState[c * 4] =
+          (byte)
+              ((mul0E((byte) s0) ^ mul0B((byte) s1) ^ mul0D((byte) s2) ^ mul09((byte) s3)) & 0xFF);
+      newState[c * 4 + 1] =
+          (byte)
+              ((mul09((byte) s0) ^ mul0E((byte) s1) ^ mul0B((byte) s2) ^ mul0D((byte) s3)) & 0xFF);
+      newState[c * 4 + 2] =
+          (byte)
+              ((mul0D((byte) s0) ^ mul09((byte) s1) ^ mul0E((byte) s2) ^ mul0B((byte) s3)) & 0xFF);
+      newState[c * 4 + 3] =
+          (byte)
+              ((mul0B((byte) s0) ^ mul0D((byte) s1) ^ mul09((byte) s2) ^ mul0E((byte) s3)) & 0xFF);
     }
     return newState;
   }
